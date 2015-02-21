@@ -1,20 +1,23 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include <string>
+#include <vector>
 
+#include <iostream>
 
 
 
 std::string toRoman(int arabic)
 {
+    int arabicNum[] = {10, 1};
+    std::string romanNum[] = {"X","I"};
     std::string roman = "";
-    while(arabic >= 10)
-    {
-        roman += "X";
-        arabic -= 10;
-    }
-    while(arabic-- > 0)
-        roman += "I";
+    for(int i = 0; i < 2; i++)
+        while(arabic >= arabicNum[i])
+        {
+            roman += romanNum[i];
+            arabic -= arabicNum[i];
+        }
 
     return roman;
 }
@@ -29,6 +32,7 @@ TEST_CASE("Arabic To Roman Conversion", "[toRoman]")
     REQUIRE( toRoman(3) == "III");
     REQUIRE( toRoman(10) == "X");
     REQUIRE( toRoman(33) == "XXXIII");
+    REQUIRE( toRoman(4) == "IV");
 }
 
 
