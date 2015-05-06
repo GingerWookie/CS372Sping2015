@@ -6,12 +6,22 @@
 class Armor
 {
 public:
+    Armor(int, std::string);
     virtual ~Armor() = default;
-    std::string getArmor();
-    void setArmor(std::string);
+    std::string getArmorType();
+    int getAC();
+    void setArmorType(std::string);
 protected:
 private:
+    int _ac;
     std::string _armorType;
+};
+
+class NoArmor : public Armor
+{
+public:
+    NoArmor();
+private:
 };
 
 class LightArmor : public Armor
@@ -19,8 +29,6 @@ class LightArmor : public Armor
 public:
     LightArmor();
 private:
-
-
 };
 
 class MediumArmor : public Armor
@@ -28,7 +36,6 @@ class MediumArmor : public Armor
 public:
     MediumArmor();
 private:
-
 };
 
 class HeavyArmor : public Armor

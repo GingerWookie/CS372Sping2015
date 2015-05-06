@@ -9,14 +9,6 @@
 
 int main()
 {
-    Player player1;
-    std::shared_ptr<Armor> lightArmor = std::make_shared<LightArmor>();
-    std::shared_ptr<Armor> mediumArmor = std::make_shared<MediumArmor>();
-    std::shared_ptr<Armor> heavyArmor = std::make_shared<HeavyArmor>();
-    std::cout << lightArmor->getArmor() << std::endl;
-    std::cout << mediumArmor->getArmor() << std::endl;
-    std::cout << heavyArmor->getArmor() << std::endl;
-
-
+    std::unique_ptr<Player> player1;
     return 0;
 }

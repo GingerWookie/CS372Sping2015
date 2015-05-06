@@ -1,27 +1,32 @@
 #include "Armor.h"
 
-std::string Armor::getArmor()
+Armor::Armor(int ac, std::string armorType): _armorType(armorType)
+{}
+
+std::string Armor::getArmorType()
 {
     return _armorType;
 }
 
-void Armor::setArmor(std::string armorType)
+int Armor::getAC()
+{
+    return _ac;
+}
+
+void Armor::setArmorType(std::string armorType)
 {
     _armorType = armorType;
 }
 
-LightArmor::LightArmor()
-{
-    this->setArmor("Light Armor");
-}
+NoArmor::NoArmor(): Armor(0, "No Armor")
+{}
 
-MediumArmor::MediumArmor()
-{
-    this->setArmor("Medium Armor");
-}
+LightArmor::LightArmor(): Armor(2, "Light Armor")
+{}
 
-HeavyArmor::HeavyArmor()
-{
-    this->setArmor("Heavy Armor");
-}
+MediumArmor::MediumArmor(): Armor(5, "Medium Armor")
+{}
+
+HeavyArmor::HeavyArmor(): Armor(10, "Heavy Armor")
+{}
 
