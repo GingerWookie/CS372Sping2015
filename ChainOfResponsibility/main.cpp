@@ -11,6 +11,9 @@ int main()
     std::shared_ptr<Armor> lightArmor = std::make_shared<LightArmor>();
     std::shared_ptr<Armor> mediumArmor = std::make_shared<MediumArmor>();
     std::shared_ptr<Armor> heavyArmor = std::make_shared<HeavyArmor>();
+    std::shared_ptr<Armor> customArmor = std::make_shared<Armor>();
+
+
 
     Player player1;
     player1.listOwnedItems();
