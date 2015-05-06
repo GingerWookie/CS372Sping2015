@@ -13,7 +13,7 @@ void ArmorHandler::listOwnedArmors()
     std::cout << "  List of owned Armors:" << std::endl;
     for(auto armor : _ownedArmors)
     {
-        std::cout << "  Position: " << position << " ArmorType: " << armor->getArmorType() << " AC: " << armor->getAC() << std::endl;
+        std::cout << "      Position: " << position << " ArmorType: " << armor->getArmorType() << " AC: " << armor->getAC() << std::endl;
         ++position;
     }
 }
@@ -26,7 +26,7 @@ void ArmorHandler::equipArmor(int position)
 void ArmorHandler::listCurrentStats()
 {
     std::cout << "  Current Armor Statistics:" << std::endl;
-    std::cout << "  ArmorType: " << getCurrentArmorType() << " AC: " << getCurrentAC() << std::endl;
+    std::cout << "      ArmorType: " << getCurrentArmorType() << " AC: " << getCurrentAC() << std::endl;
 }
 
 std::string ArmorHandler::getCurrentArmorType()

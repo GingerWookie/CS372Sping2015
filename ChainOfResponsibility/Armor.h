@@ -10,9 +10,8 @@ public:
     virtual ~Armor() = default;
     void setArmorType(std::string);
     std::string getArmorType();
-    void setAC();
+    void setAC(int);
     int getAC();
-
 protected:
 private:
     int _ac;

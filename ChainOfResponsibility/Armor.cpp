@@ -14,6 +14,11 @@ std::string Armor::getArmorType()
     return _armorType;
 }
 
+void Armor::setAC(int ac)
+{
+    _ac = ac;
+}
+
 int Armor::getAC()
 {
     return _ac;
