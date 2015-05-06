@@ -24,12 +24,6 @@ public:
 private:
 };
 
-class LightArmor : public Armor
-{
-public:
-    LightArmor();
-private:
-};
 
 class MediumArmor : public Armor
 {

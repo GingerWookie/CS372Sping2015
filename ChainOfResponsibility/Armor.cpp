@@ -1,6 +1,6 @@
 #include "Armor.h"
 
-Armor::Armor(int ac, std::string armorType): _armorType(armorType)
+Armor::Armor(int ac, std::string armorType):_ac(ac), _armorType(armorType)
 {}
 
 std::string Armor::getArmorType()
@@ -21,8 +21,7 @@ void Armor::setArmorType(std::string armorType)
 NoArmor::NoArmor(): Armor(0, "No Armor")
 {}
 
-LightArmor::LightArmor(): Armor(2, "Light Armor")
-{}
+
 
 MediumArmor::MediumArmor(): Armor(5, "Medium Armor")
 {}

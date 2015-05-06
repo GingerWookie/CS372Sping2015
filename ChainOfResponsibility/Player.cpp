@@ -1,37 +1,37 @@
 #include "Player.h"
 #include <initializer_list>
-Player::Player(): _armor(std::unique_ptr<ArmorHandler>())
+Player::Player(): _armor(ArmorHandler())
 {
-_armor->addArmor(std::shared_ptr<NoArmor>());
-_armor->equipArmor(0);
+_armor.addArmor(std::make_shared<NoArmor>());
+_armor.equipArmor(0);
 }
 
-std::shared_ptr<Armor> Player::getCurrentArmor()
+const ArmorHandler Player::getArmorHandler()
 {
-    return _armor->getCurrentArmor();
-}
-
-std::string Player::getCurrentArmorType()
-{
-    return _armor->getCurrentArmorType();
-}
-
-int Player::getCurrentAC()
-{
-    return _armor->getCurrentAC();
+    return _armor;
 }
 
 void Player::equipArmor(int armorPos)
 {
-    _armor->equipArmor(armorPos);
+    _armor.equipArmor(armorPos);
+    std::cout << _armor.getCurrentArmorType() << " has been Equipped." << std::endl << std::endl;
 }
 
-void Player::listOwnedArmors()
+void Player::listOwnedItems()
 {
-    _armor->listOwnedArmors();
+    std::cout << "List of owned items:" << std::endl << std::endl;
+    _armor.listOwnedArmors();
+    std::cout << std::endl;
 }
 
-void Player::addArmor(std::shared_ptr<Armor> armor)
+void Player::listCurrentStats()
 {
-    _armor->addArmor(move(armor));
+    std::cout << "List of Current Statistics:" << std::endl << std::endl;
+    _armor.listCurrentStats();
+    std::cout << std::endl;
+}
+
+void Player::addItem(std::shared_ptr<Armor> armor)
+{
+    _armor.addArmor(armor);
 }

@@ -18,6 +18,7 @@ class ArmorHandler
         void addArmor(std::shared_ptr<Armor>);
         void listOwnedArmors();
         void equipArmor(int);
+        void listCurrentStats();
         std::string getCurrentArmorType();
         int getCurrentAC();
         std::shared_ptr<Armor> getCurrentArmor();

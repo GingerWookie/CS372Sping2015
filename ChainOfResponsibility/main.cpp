@@ -4,11 +4,25 @@
 #include <memory>
 #include "Player.h"
 #include "Armor.h"
-#include "ArmorHandler.h"
-
+#include "LightArmor.h"
 
 int main()
 {
-    std::unique_ptr<Player> player1;
+    std::shared_ptr<Armor> lightArmor = std::make_shared<LightArmor>();
+    std::shared_ptr<Armor> mediumArmor = std::make_shared<MediumArmor>();
+    std::shared_ptr<Armor> heavyArmor = std::make_shared<HeavyArmor>();
+
+    Player player1;
+    player1.listOwnedItems();
+    player1.listCurrentStats();
+
+    player1.addItem(lightArmor);
+    player1.addItem(mediumArmor);
+    player1.addItem(heavyArmor);
+    player1.listOwnedItems();
+
+    player1.equipArmor(3);
+    player1.listCurrentStats();
+
     return 0;
 }

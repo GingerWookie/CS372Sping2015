@@ -13,16 +13,15 @@ class Player
     public:
         Player();
         ~Player() = default;
-        std::shared_ptr<Armor> getCurrentArmor();
-        std::string getCurrentArmorType();
-        int getCurrentAC();
+        const ArmorHandler getArmorHandler();
         void equipArmor(int);
-        void listOwnedArmors();
-        void addArmor(std::shared_ptr<Armor>);
+        void listOwnedItems();
+        void listCurrentStats();
+        void addItem(std::shared_ptr<Armor>);
 
     protected:
     private:
-        std::unique_ptr<ArmorHandler> _armor;
+        ArmorHandler _armor;
 
 };
 
