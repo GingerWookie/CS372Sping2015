@@ -4,6 +4,7 @@
 #include <string>
 #include <memory>
 #include "Armor.h"
+#include "PremadeArmor.h"
 #include "ArmorHandler.h"
 
 

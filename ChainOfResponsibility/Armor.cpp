@@ -20,14 +20,3 @@ int Armor::getAC()
 }
 
 
-NoArmor::NoArmor(): Armor(0, "No Armor")
-{}
-
-
-
-MediumArmor::MediumArmor(): Armor(5, "Medium Armor")
-{}
-
-HeavyArmor::HeavyArmor(): Armor(10, "Heavy Armor")
-{}
-

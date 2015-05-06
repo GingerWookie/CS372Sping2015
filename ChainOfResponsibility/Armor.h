@@ -19,27 +19,8 @@ private:
     std::string _armorType;
 };
 
-class NoArmor : public Armor
-{
-public:
-    NoArmor();
-private:
-};
 
 
-class MediumArmor : public Armor
-{
-public:
-    MediumArmor();
-private:
-};
-
-class HeavyArmor : public Armor
-{
-public:
-    HeavyArmor();
-private:
-};
 
 
 
